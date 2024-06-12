@@ -1,0 +1,35 @@
+<%- include('header') -%>
+
+
+    
+<h1>Tu lista de <%= lista_de %>.</h1>
+<% mi_lista.forEach((elemento) => { %>
+    <form action="/eliminar" method="post">
+        <input type="checkbox" name="marcado" value=<%= elemento._id%> onChange='this.form.submit()'>
+        <label><%= elemento.name %></label>
+        <input type="hidden" name="lista_de" value="<%= lista_de %>">
+    </form>
+<%  } ) %>
+
+
+<form class="" action="/" method="post">
+    <input type="text" name="nuevo" placeholder="nuevo...">
+    <button type="submit" name="lista_de" value="<%= lista_de  %>">+</button>
+</form>
+
+
+
+<%- include('footer') -%>
+
+
+
+
+
+
+
+
+
+
+
+
+   

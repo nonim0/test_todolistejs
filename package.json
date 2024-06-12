@@ -1,0 +1,21 @@
+{
+  "name": "test_ejs",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nonimo",
+  "license": "ISC",
+  "engines": {
+    "node": "^20.13.1"
+  },
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.4.0"
+  }
+}
