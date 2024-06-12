@@ -8,7 +8,7 @@
   "author": "nonimo",
   "license": "ISC",
   "engines": {
-    "node": "^20.13.1"
+    "node": "20.13.1"
   },
   "description": "",
   "dependencies": {
