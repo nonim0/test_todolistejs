@@ -129,9 +129,6 @@ app.post('/', (demnd, resp) => {
             name: nuevo_input
     })
     if (nombre_lista === 'hoy' ) {
-        // guardar = async () => {
-        // }
-        // guardar()
         nuevo_elemento.save()
         resp.redirect('/')
     } else {
@@ -139,7 +136,6 @@ app.post('/', (demnd, resp) => {
         listas_q = buscar(Lista, filtro).then(async (lista, err) => {
             await lista.elementos.push(nuevo_elemento)
             lista.save()
-            // console.log(lista.elementos);
             resp.redirect('/' + nombre_lista)
         })
     }
@@ -151,9 +147,6 @@ app.post('/eliminar', (demnd, resp) => {
     id_elemento_marcado = demnd.body.marcado
     nombre_lista = demnd.body.lista_de
     if (nombre_lista === 'hoy') {
-        // eliminar = async () =>{
-        // }
-        // eliminar()
         eliminar_xid(Elemento, id_elemento_marcado)
         resp.redirect('/')
     } else {
@@ -169,10 +162,8 @@ app.post('/eliminar', (demnd, resp) => {
 
 
 // PUERTO
-puerto= process.env.PORT
-if (puerto == null || puerto == '') {
-    puerto = 3000
-}
+const puerto = process.env.PORT || 3000
+
 app.listen(puerto, () => {
     console.log(puerto + ' OK')
 });
