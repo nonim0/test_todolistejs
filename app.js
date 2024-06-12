@@ -12,11 +12,11 @@ usuario = encodeURIComponent('ominon')
 contraseña = encodeURIComponent('bo9aUkXMHquMRubv')
 base_de_datos = 'listaDB'
 url = 'mongodb://localhost:27017/'
-uri = "mongodb+srv://" + usuario + ":" + contraseña + "@cluster0.yplqi7l.mongodb.net/"
+uri = "mongodb+srv://" + usuario + ":" + contraseña + "@cluster0.yplqi7l.mongodb.net/" + base_de_datos
 
 conectar = async () => {
 // Conectar //
-    mongoose.connect(uri + base_de_datos);
+    mongoose.connect(uri);
 }
 conectar().catch(error => console.log(error));
     
@@ -156,7 +156,6 @@ app.post('/eliminar', (demnd, resp) => {
         // eliminar()
         eliminar_xid(Elemento, id_elemento_marcado)
         resp.redirect('/')
-        console.log('400')
     } else {
         filtro = {name: nombre_lista}
         pull = {$pull: {elementos: {_id: id_elemento_marcado}}}
@@ -167,11 +166,6 @@ app.post('/eliminar', (demnd, resp) => {
         })
     }
 });
-
-
-
-
-
 
 
 // PUERTO
